@@ -1,0 +1,8 @@
+{
+  "name": "mini-redux",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cansiny0320 <1136843910@qq.com>",
+  "license": "MIT",
+  "type": "module"
+}
