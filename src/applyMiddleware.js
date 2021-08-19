@@ -9,7 +9,10 @@ const compose = (...funcs) =>
 export default function applyMiddleware(...middlewares) {
   return createStore => (reducer, preloadedState) => {
     const store = createStore(reducer, preloadedState)
-    const chain = middlewares.map(middleware => middleware(store))
+    const middlewareAPI = {
+      getState: store.getState,
+    }
+    const chain = middlewares.map(middleware => middleware(middlewareAPI))
     const dispatch = compose(...chain)(store.dispatch)
     store.dispatch = dispatch
     return store

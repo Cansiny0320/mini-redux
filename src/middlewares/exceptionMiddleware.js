@@ -1,4 +1,4 @@
-const exceptionMiddleware = store => next => action => {
+const exceptionMiddleware = () => next => action => {
   try {
     next(action)
   } catch (err) {
